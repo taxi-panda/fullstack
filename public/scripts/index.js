@@ -1,4 +1,11 @@
 $(document).ready(() => {
+
+
+
+
+
+
+
     const ctx = $("#myChart");
 
 let grabData = function(){
