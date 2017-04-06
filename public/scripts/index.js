@@ -1,11 +1,5 @@
 $(document).ready(() => {
 
-
-
-
-
-
-
     const ctx = $("#myChart");
     let myChart = new Chart(ctx, {
         type: 'bar',
