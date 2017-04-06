@@ -5,12 +5,15 @@ const   express = require('express'),
         pgp = require('pg-promise'),
         fetch = require('fetch'),
         dotenv = require('dotenv'),
+        logger = require('morgan'),
         PORT = process.env.PORT || 3000;
 
 app.engine('html', mustache());
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
+
+app.use(logger('dev'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
