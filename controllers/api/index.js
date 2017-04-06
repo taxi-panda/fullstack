@@ -9,4 +9,6 @@ router.post('/start', controller.findByStartName);
 // ONLY POST HERE FOR DUMMY DATA!
 router.post('/dummy', controller.createDummy);
 
+// router.get('/test', controller)
+
 module.exports = router;

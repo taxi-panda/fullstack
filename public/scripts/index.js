@@ -30,7 +30,7 @@ $(document).ready(() => {
     })
   }
 
-  WORKING AJAX CALL
+  // WORKING AJAX CALL
   $('#test').submit((e) => {
       e.preventDefault();
 
