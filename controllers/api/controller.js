@@ -1,5 +1,6 @@
 const routes = require('../../models/routes-model');
 const faker = require('faker');
+const fetch = require('node-fetch');
 
 const controller = {};
 

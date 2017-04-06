@@ -7,6 +7,4 @@ router.post('/dummy', controller.createDummy);
 router.get('/start-name', controller.findByStartName);
 router.post('/', controller.create);
 
-// router.get('/test', controller)
-
 module.exports = router;
