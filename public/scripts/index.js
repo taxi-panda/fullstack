@@ -36,5 +36,32 @@ $(document).ready(() => {
             }
         }
     });
-});
+const getData = function(){
 
+    $.ajax({
+      url: '/api',
+      method: 'GET',
+      success: (data) =>{
+        console.log(data);
+      },
+      error:(err) =>{
+        console.log(err);
+      },
+  });
+};
+
+const postData = function(){
+  $.ajax({
+    url: '/home',
+    method: 'POST',
+    data:
+    success: (data) => {
+      console.log(data);
+    },
+    error:(err) => {
+      console.log(err);
+    }
+  })
+}
+
+});
