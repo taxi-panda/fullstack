@@ -1,0 +1,32 @@
+/*font-family: 'Anton',     sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Armata',    sans-serif;*/
+
+h1{
+  color: #000000;
+  font-family: 'Armata',    sans-serif;
+  font-size: 25px;
+}
+
+
+body{
+  background-color: #f0f8ff;
+}
+
+.container{
+  display: flex;
+
+}
+
+
+.page{
+  background-color: #ffffff;
+  flex-direction: row;
+  padding: 1%;
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  font-family: 'Fira Sans', sans-serif;
+}
