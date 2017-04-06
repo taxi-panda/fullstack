@@ -61,10 +61,12 @@ const getData = function(){
 };
 
 const postData = function(){
+    const obj = {name: "Sabrina", age: 18};
+
   $.ajax({
-    url: '/api',
+    url: 'http://localhost:3000',
     method: 'POST',
-    data:
+    data: obj,
     success: (data) => {
       console.log(data);
     },
@@ -73,5 +75,22 @@ const postData = function(){
     }
   })
 }
+
+// WORKING AJAX CALL
+$('#test').submit((e) => {
+    e.preventDefault();
+
+  $.ajax({
+    url: 'http://localhost:5000/predict',
+    method: 'POST',
+    data: $('#test').serialize(),
+    success: (data) => {
+      console.log("data", data);
+    },
+    error:(err) => {
+      console.log("error", err);
+    }
+  })
+});
 
 });
