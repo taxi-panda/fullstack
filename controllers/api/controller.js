@@ -1,6 +1,5 @@
 const routes = require('../../models/routes-model');
 const faker = require('faker');
-const fetch = require('node-fetch');
 
 const controller = {};
 
@@ -49,10 +48,12 @@ controller.create = (req, res) => {
 }
 
 controller.findByStartName = (req,res) => {
-    console.log(req);
-    // routes.findByStartName(req.query.start_name)
-    //     .then(data => res.json)
-    //     .catch(err => console.log('Error - findByStartName:', err));
+    console.log(req.body);
+    const startName = req.body.start_name;
+
+    routes.findByStartName(startName)
+        .then(data => res.json(data))
+        .catch(err => console.log('Error - findByStartName:', err));
 }
 
 module.exports = controller;
