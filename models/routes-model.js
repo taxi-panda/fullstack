@@ -14,7 +14,7 @@ routes.create = (obj) => {
 };
 
 routes.findByStartName = (start_name) => {
-    return db.manyOrNone('SELECT * FROM routes WHERE start_name = $1', [start_name]);
+    return db.any('SELECT * FROM routes WHERE start_name=$1', start_name);
 }
 
 module.exports = routes;
