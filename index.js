@@ -2,6 +2,7 @@ const   express = require('express'),
         app = express(),
         mustache = require('mustache-express'),
         bodyParser = require('body-parser'),
+        pgp = require('pg-promise'),
         fetch = require('fetch'),
         dotenv = require('dotenv'),
         PORT = process.env.PORT || 3000;
