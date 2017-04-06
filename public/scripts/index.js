@@ -43,10 +43,19 @@ $(document).ready(() => {
             }
         }
     });
+
+    var map;
+          function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -34.397, lng: 150.644},
+              zoom: 8
+            });
+          }
+
 const getData = function(){
 
     $.ajax({
-      url: '/api',
+      url: '/home',
       method: 'GET',
       success: (data) =>{
         console.log(data);
@@ -59,7 +68,7 @@ const getData = function(){
 
 const postData = function(){
   $.ajax({
-    url: '/home',
+    url: '/api',
     method: 'POST',
     data:
     success: (data) => {
