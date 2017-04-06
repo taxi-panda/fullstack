@@ -27,23 +27,19 @@
              <div class ="search">
                <form>
                  <h1> Pick Up </h1>
-                 <input type="text"  name="address" value="" placeholder="E.G 123 Elm St">
-                 <input type="text"  name="city" value=""    placeholder="E.G New York">
-                 <input type="text"  name="city" value=""    placeholder="E.G 12590"><br>
+                   <input type="text"  name="address" value="" placeholder="E.G 123 Elm St">
+                   <input type="text"  name="city" value=""    placeholder="E.G New York">
+                   <input type="text"  name="city" value=""    placeholder="E.G 12590"><br>
                  <h1> Drop Off</h1>
                    <input  type="text"  name="address" value=""    placeholder="E.G 39 5th Ave">
                    <input  type="text"  name="city"    value=""    placeholder="E.G New York">
                    <input  type="text"  name="city"    value=""    placeholder="E.G 12587"><br>
                    <input  type="submit"               value=" Get Fare">
                </form>
-
              </div>
-
     </div>
- <div class ="page" id="p2">
-
-
-
+<div class ="page" id="p2">
+  <div id="map"></div>
 </div>
 
 </div>
@@ -57,4 +53,6 @@
 
 
 </body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwGD-nZL80o&callback=initMap"
+    async defer></script>
 </html>
