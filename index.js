@@ -10,4 +10,4 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
-app.listen(PORT, () => console.log('Server is listening on port', PORT));
+app.listen(PORT, () => console.log('The Universe Smiles Upon You', PORT));
