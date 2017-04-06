@@ -1,5 +1,9 @@
 $(document).ready(() => {
     const ctx = $("#myChart");
+
+let grabData = function(){
+
+}
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
