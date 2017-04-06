@@ -3,6 +3,7 @@ const   express = require('express'),
         mustache = require('mustache-express'),
         bodyParser = require('body-parser'),
         fetch = require('fetch'),
+        dotenv = require('dotenv'),
         PORT = process.env.PORT || 3000;
 
 app.engine('html', mustache());
@@ -14,8 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.render('index');
-})
+app.use('/', require('./router'));
+
 
 app.listen(PORT, () => console.log('Server is listening on port', PORT));
