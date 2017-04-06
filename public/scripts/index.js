@@ -36,6 +36,10 @@ $(document).ready(() => {
             }
         }
     });
+
+
+
+
 const getData = function(){
 
     $.ajax({
