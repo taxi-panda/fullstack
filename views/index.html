@@ -56,13 +56,58 @@
            </p>
         </fieldset>
 
-                   <input  type="submit" value="Get Fare">
+                   <input id="submit" type="submit" value="Get Fare">
                </form>
              </div>
     </div>
 <div class ="page" id="p2">
   <div id="map">
+  <script>
+  const initMap = (locations) => {
 
+
+    let myLatlng = {lat: Number(locations[0].start_lat), lng: Number(locations[0].start_lng)};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: myLatlng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'Click to zoom'
+      });
+
+      map.addListener('center_changed', function() {
+        // 3 seconds after the center of the map has changed, pan back to the
+        // marker.
+        window.setTimeout(function() {
+          map.panTo(marker.getPosition());
+        }, 3000);
+      });
+
+      marker.addListener('click', function() {
+        map.setZoom(8);
+        map.setCenter(marker.getPosition());
+      });
+
+        let endTag = locations[1];
+
+        let myendLatlng = {lat: Number(end.start_lat), lng: Number(endTag.start_lng)};
+
+        var marker = new google.maps.Marker({
+          position: myendLatlng,
+          title: 'Click to zoom'
+        });
+
+        marker.setMap(map);
+
+      }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwGD-nZL80o&callback=initMap">
+    </script>
   </div>
 
   <div class="slide">
