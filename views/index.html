@@ -19,154 +19,103 @@
 </head>
 <body>
 
+  <div class "container">
 
-  <button id="all">Get All Markers</button>
+      <div class ="page" id="p1">
+        <div class ="search">
+          <header> PANDA TAXI </header>
 
+          <form id="address">       
 
- <div class "container">
-   <div class ="page" id="p1">
+            <h2> Pick Up </h2>
+            <input type="text" name="address" placeholder="E.G 123 Elm St" id="paddress">
+            <input type="text" name="city"    placeholder="E.G New York" id="pcity">
+            <input  type="text"  name="state" placeholder="E.G. NY" id="pstate">
+            <br>
 
-             <div class ="search">
-               <form>
-                 <header> PANDA TAXI </header>
-                 <h2> Pick Up </h2>
+            <h2> Drop Off</h2>
+            <input  type="text"  name="address"    placeholder="E.G. 39 5TH AVE" id="daddress">
+            <input  type="text"  name="city" placeholder="E.G. NEW YORK" id="dCity">
+            <input  type="text"  name="state" placeholder="E.G. NY" id="dstate">
+            <br>
 
-                 <input type="text" name="address" placeholder="E.G 123 Elm St">
-                 <input type="text" name="city"    placeholder="E.G New York">
-                 <input type="text" name="city"    placeholder="E.G 12590">
-                 <br>
-                 <h2> Drop Off</h2>
-                   <input  type="text"  name="address"     placeholder="E.G. 39 5TH AVE">
-                   <input  type="text"  name="city"        placeholder="E.G. NEW YORK">
-                   <input  type="text"  name="city"        placeholder="E.G. 12587"><br>
+            <h2> Time & Day </h2>
+                <label>Select Day</label>
+                <select id="day">
+                  <option value = "0">Mon</option>
+                  <option value = "1">Tue</option>
+                  <option value = "2">Wed</option>
+                  <option value = "3">Thu</option>
+                  <option value = "4">Fri</option>
+                  <option value = "5">Sat</option>
+                  <option value = "6">Sun</option>
+                </select>
+                <br>
 
-                   <h2> Time & Day </h2>
-                 <fieldset>
-               <p>
-                 <label>Select Day</label>
-            <select id = "days">
-              <option value = "0">Mon</option>
-              <option value = "1">Tue</option>
-              <option value = "2">Wed</option>
-              <option value = "3">Thu</option>
-              <option value = "4">Fri</option>
-              <option value = "5">Sat</option>
-              <option value = "6">Sun</option>
-            </select>
-           </p>
-        </fieldset>
+              <button type="submit" class="submit">Submit</button>
+          </form>
+        </div>
+      </div>
 
-                   <input id="submit" type="submit" value="Get Fare">
-               </form>
-             </div>
-    </div>
-<div class ="page" id="p2">
-  <div id="map">
-  <script>
-  const initMap = (locations) => {
+      <div class ="page" id="p2">
+        <div id="map"></div>
+        <script>
+          function initMap(){
 
+            let myLatlng = {lat: 40.764178, lng: -73.959834};
 
-    let myLatlng = {lat: Number(locations[0].start_lat), lng: Number(locations[0].start_lng)};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: myLatlng
+              });
+          }
+        </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwGD-nZL80o&callback=initMap">
+        </script>
+      </div>
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: myLatlng
-      });
-
-      var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Click to zoom'
-      });
-
-      map.addListener('center_changed', function() {
-        // 3 seconds after the center of the map has changed, pan back to the
-        // marker.
-        window.setTimeout(function() {
-          map.panTo(marker.getPosition());
-        }, 3000);
-      });
-
-      marker.addListener('click', function() {
-        map.setZoom(8);
-        map.setCenter(marker.getPosition());
-      });
-
-        let endTag = locations[1];
-
-        let myendLatlng = {lat: Number(end.start_lat), lng: Number(endTag.start_lng)};
-
-        var marker = new google.maps.Marker({
-          position: myendLatlng,
-          title: 'Click to zoom'
-        });
-
-        marker.setMap(map);
-
-      }
-  </script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwGD-nZL80o&callback=initMap">
-    </script>
+      <div class ="page" id="p3">
+        <div class="graph-container">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+      </div>
+ 
   </div>
 
-  <div class="slide">
+    <form id="user-by-start">
+      <label for="name">Origin Name</label>
+      <input type="text" name="start_name" id="start_name"/>
 
-  <div class="graph-container">
-     <canvas id="myChart" width="400" height="400"></canvas>
-  </div>
+      <button type="submit">submit</button>
+    </form>
 
-  </div>
+    <form id="create-new" action="/api" method="POST">
+      <label for="start_lat">Pick Up Latitude</label>
+      <input type="number" name="start_lat" />
+      <label for="start_lng">Pick Up Longitude</label>
+      <input type="number" name="start_lng" />
+      <label for="start_addr">Pick Up Address</label>
+      <input type="text" name="start_addr" />
+      <label for="start_name">Pick Up Name</label>
+      <input type="text" name="start_name" />
 
-</div>
+      <label for="end_lat">Drop Off Latitude</label>
+      <input type="number" name="end_lat" />
+      <label for="end_lng">Drop Off Longitude</label>
+      <input type="number" name="end_lng" />
+      <label for="end_addr">Drop Off Address</label>
+      <input type="text" name="end_addr" />
+      <label for="end_name">Drop Off Name</label>
+      <input type="text" name="end_name" />
 
-<div class ="page" id="p3">
+      <label for="price">Price</label>
+      <input type="number" name="price" />
 
-  <form class="user">
-    <input type="text" name="name"            placeholder="E.G. CAROLINE">
-    <input type="text" name="location"        placeholder="E.G. HOME">
-    <input type="text" name="start-location"  placeholder="E.G. 127 ADAMS ST.">
+      <label for"start_time">Start Time</label>
+      <input type="time" name="start_time" />
 
-  </form>
-
-
-</div>
-
-</div>
-
-<form id="user-by-start">
-  <label for="name">Origin Name</label>
-  <input type="text" name="start_name" id="start_name"/>
-
-  <button type="submit">submit</button>
-</form>
-
-<form id="create-new" action="/api" method="POST">
-  <label for="start_lat">Pick Up Latitude</label>
-  <input type="number" name="start_lat" />
-  <label for="start_lng">Pick Up Longitude</label>
-  <input type="number" name="start_lng" />
-  <label for="start_addr">Pick Up Address</label>
-  <input type="text" name="start_addr" />
-  <label for="start_name">Pick Up Name</label>
-  <input type="text" name="start_name" />
-
-  <label for="end_lat">Drop Off Latitude</label>
-  <input type="number" name="end_lat" />
-  <label for="end_lng">Drop Off Longitude</label>
-  <input type="number" name="end_lng" />
-  <label for="end_addr">Drop Off Address</label>
-  <input type="text" name="end_addr" />
-  <label for="end_name">Drop Off Name</label>
-  <input type="text" name="end_name" />
-
-  <label for="price">Price</label>
-  <input type="number" name="price" />
-
-  <label for"start_time">Start Time</label>
-  <input type="time" name="start_time" />
-
-  <button type="submit">Save</button>
-</form>
+      <button type="submit">Save</button>
+    </form>
 </body>
 </html>

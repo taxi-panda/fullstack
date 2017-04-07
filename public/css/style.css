@@ -6,6 +6,7 @@ header{
   opacity: 1;
   -webkit-animation-name: logo;
   -webkit-animation-duration: 4s;
+  width: 100%;
  }
 
 h2{
@@ -37,6 +38,8 @@ body{
 .search{
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 }
@@ -57,8 +60,8 @@ form {
 }
 
 #map{
-  width:  300px;
-  height: 300px;
+  width:  90%;
+  height: 90%;
 }
 
 input{
@@ -68,54 +71,17 @@ input{
 
 .button{
   align-items: center;
-  }
+}
+
 #p2{
   background-color: #f0f8ff ;
 }
 
-
-.slide{
-
-    background-color: #f0f8ff ;
-    border: solid black;
-    height: 200px;
-    width:  200px;
-}
-
-.graph-container{
-
-}
-
-
-/*sign up*/
-
-.container-sign-up-page{
-  background-color: orange;
+.page {
   display: flex;
   align-items: center;
-  height: 100%;
-  width: 100%;
-
+  justify-content: space-around;
 }
-
-
-.sign-up-form{
-
-      background-color: #9E9E9E;
-      position: absolute;
-      height: 60%;
-      width: 40%;
-      top: 25%;
-      left: 25%;
-  }
-
-
-
-.sign-up{
-  align-items: center;
-
-}
-
 
 @-webkit-keyframes logo{
   0%  { color: #000000 ; opacity: 0.1; font-size: 40px;}
