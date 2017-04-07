@@ -50,7 +50,13 @@ h2{
 }
 
 form {
-  position: absolute;
+  /*position: absolute;*/
+  top: 25%;
+  left: 25%;
+}
+
+.user{
+
   top: 25%;
   left: 25%;
 }
@@ -86,5 +92,35 @@ input{
 }
 
 .graph-container{
+
+}
+
+
+/*sign up*/
+
+.container-sign-up-page{
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.sign-up-form{
+
+      background-color: #9E9E9E;
+      position: absolute;
+      height: 60%;
+      width: 40%;
+      top: 25%;
+      left: 25%;
+  }
+
+
+
+.sign-up{
+  align-items: center;
 
 }

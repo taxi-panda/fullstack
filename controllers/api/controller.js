@@ -14,7 +14,7 @@ controller.createDummy = (req,res) => {
         start_lat: faker.address.latitude(),
         start_lng: faker.address.longitude(),
         start_addr: faker.address.streetAddress(),
-        start_name: faker.address.streetName(),
+        start_name: "OTHER",
         end_lat: faker.address.latitude(),
         end_lng: faker.address.longitude(),
         end_addr: faker.address.streetAddress(),

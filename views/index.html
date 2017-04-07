@@ -16,14 +16,10 @@
     <title>LOGISTICS</title>
 </head>
 <body>
+
+
   <button id="all">Get All Markers</button>
 
-  <!-- <form id="user-by-start">
-    <label for="name">Origin Name</label>
-    <input type="text" name="start_name" id="start_name"/>
-
-    <button type="submit">submit</button>
-  </form> -->
 
  <div class "container">
    <div class ="page" id="p1">
@@ -41,6 +37,23 @@
                    <input  type="text"  name="address"     placeholder="E.G. 39 5TH AVE">
                    <input  type="text"  name="city"        placeholder="E.G. NEW YORK">
                    <input  type="text"  name="city"        placeholder="E.G. 12587"><br>
+
+                   <h2> Time & Day </h2>
+                 <fieldset>
+               <p>
+                 <label>Select Day</label>
+            <select id = "days">
+              <option value = "0">Mon</option>
+              <option value = "1">Tue</option>
+              <option value = "2">Wed</option>
+              <option value = "3">Thu</option>
+              <option value = "4">Fri</option>
+              <option value = "5">Sat</option>
+              <option value = "6">Sun</option>
+            </select>
+           </p>
+        </fieldset>
+
                    <input  type="submit" value="Get Fare">
                </form>
              </div>
@@ -58,340 +71,6 @@
 
   </div>
 
-  <div id="map-2"></div>
-
-  <script>
-
-  function initMap() {
-
-  var styledMapType = new google.maps.styledMapType (
-    [
-        {"elementType": "labels.text",
-         "stylers": [{"visibility": "off"}]},
-        {"featureType": "landscape.natural",
-         "elementType": "geometry.fill",
-        "stylers": [{"color": "#f5f5f2"},
-                {"visibility": "on"}]},
-        {"featureType": "administrative",
-         "stylers": [{"visibility": "off"}]},
-        {"featureType": "transit",
-        "stylers": [{"visibility": "off"}]
-        },
-        {
-            "featureType": "poi.attraction",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "landscape.man_made",
-            "elementType": "geometry.fill",
-            "stylers": [
-                {
-                    "color": "#ffffff"
-                },
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.business",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.medical",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.place_of_worship",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.school",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.sports_complex",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#ffffff"
-                },
-                {
-                    "visibility": "simplified"
-                }
-            ]
-        },
-        {
-            "featureType": "road.arterial",
-            "stylers": [
-                {
-                    "visibility": "simplified"
-                },
-                {
-                    "color": "#ffffff"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "color": "#ffffff"
-                },
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.highway",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.arterial",
-            "stylers": [
-                {
-                    "color": "#ffffff"
-                }
-            ]
-        },
-        {
-            "featureType": "road.local",
-            "stylers": [
-                {
-                    "color": "#ffffff"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.park",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "poi",
-            "elementType": "labels.icon",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "stylers": [
-                {
-                    "color": "#71c8d4"
-                }
-            ]
-        },
-        {
-            "featureType": "landscape",
-            "stylers": [
-                {
-                    "color": "#e5e8e7"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.park",
-            "stylers": [
-                {
-                    "color": "#8ba129"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "stylers": [
-                {
-                    "color": "#ffffff"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.sports_complex",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "color": "#c7c7c7"
-                },
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "water",
-            "stylers": [
-                {
-                    "color": "#a0d3d3"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.park",
-            "stylers": [
-                {
-                    "color": "#91b65d"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.park",
-            "stylers": [
-                {
-                    "gamma": 1.51
-                }
-            ]
-        },
-        {
-            "featureType": "road.local",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.local",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "visibility": "on"
-                }
-            ]
-        },
-        {
-            "featureType": "poi.government",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "landscape",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road",
-            "elementType": "labels",
-            "stylers": [
-                {
-                    "visibility": "off"
-                }
-            ]
-        },
-        {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
-                {
-                    "visibility": "simplified"
-                }
-            ]
-        },
-        {
-            "featureType": "road.local",
-            "stylers": [
-                {
-                    "visibility": "simplified"
-                }
-            ]
-        },
-        {
-            "featureType": "road"
-        },
-        {
-            "featureType": "road"
-        },
-        {},
-        {
-            "featureType": "road.highway"
-        }
-    ],
-  {name: 'Styled Map'});
-
-
-    var myLatlng = {lat:40.759796, lng: -73.978039};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
-      center: myLatlng,
-      mapTypeControlOptions: {
-      mapTypeIds: ['styled_map']
-    }
-  });
-      map.mapTypes.set('styled_map', styledMapType);
-      map.setMapTypeId('styled_map');
-
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Click to zoom'
-    });
-    map.addListener('center_changed', function() {
-      // 3 seconds after the center of the map has changed, pan back to the
-      // marker.
-      window.setTimeout(function() {
-        map.panTo(marker.getPosition());
-      }, 3000);
-    });
-    marker.addListener('click', function() {
-      map.setZoom(6);
-      map.setCenter(marker.getPosition());
-    });
-  }
-   initMap();
-
-</script>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwGD-nZL80o&callback=initMap">
-</script>
-
 </div>
 
 <div class ="page" id="p3">
@@ -408,5 +87,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwG
 
 </div>
 
+<form id="user-by-start">
+  <label for="name">Origin Name</label>
+  <input type="text" name="start_name" id="start_name"/>
+
+  <button type="submit">submit</button>
+</form>
 </body>
 </html>
