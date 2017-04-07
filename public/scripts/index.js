@@ -75,7 +75,7 @@ $(document).ready(() => {
     console.log(cleaned);
 
 
-    
+
 
     const myLineChart = new Chart(ctx, {
       type: 'line',
