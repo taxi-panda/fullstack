@@ -20,108 +20,92 @@
 <body>
 
 
-  <button id="all">Get All Markers</button>
+  <!--<button id="all">Get All Markers</button>-->
 
 
- <div class "container">
-   <div class ="page" id="p1">
+  <div class "container">
 
-             <div class ="search">
-               <form>
-                 <header> PANDA TAXI </header>
-                 <h2> Pick Up </h2>
+      <div class ="page" id="p1">
+        <div class ="search">
+          <header> PANDA TAXI </header>
 
-                 <input type="text" name="address" placeholder="E.G 123 Elm St">
-                 <input type="text" name="city"    placeholder="E.G New York">
-                 <input type="text" name="city"    placeholder="E.G 12590">
-                 <br>
-                 <h2> Drop Off</h2>
-                   <input  type="text"  name="address"     placeholder="E.G. 39 5TH AVE">
-                   <input  type="text"  name="city"        placeholder="E.G. NEW YORK">
-                   <input  type="text"  name="city"        placeholder="E.G. 12587"><br>
+          <form class="address">       
 
-                   <h2> Time & Day </h2>
-                 <fieldset>
-               <p>
-                 <label>Select Day</label>
-            <select id = "days">
-              <option value = "0">Mon</option>
-              <option value = "1">Tue</option>
-              <option value = "2">Wed</option>
-              <option value = "3">Thu</option>
-              <option value = "4">Fri</option>
-              <option value = "5">Sat</option>
-              <option value = "6">Sun</option>
-            </select>
-           </p>
-        </fieldset>
+            <h2> Pick Up </h2>
+            <input type="text" name="address" placeholder="E.G 123 Elm St" id="paddress">
+            <input type="text" name="city"    placeholder="E.G New York" id="pcity">
+            <input  type="text"  name="state" placeholder="E.G. NY" id="pState">
+            <br>
 
-                   <input  type="submit" value="Get Fare">
-               </form>
-             </div>
-    </div>
-<div class ="page" id="p2">
-  <div id="map">
+            <h2> Drop Off</h2>
+            <input  type="text"  name="address"    placeholder="E.G. 39 5TH AVE" id="dAddress">
+            <input  type="text"  name="city" placeholder="E.G. NEW YORK" id="dCity">
+            <input  type="text"  name="state" placeholder="E.G. NY" id="dState">
+            <br>
+
+            <h2> Time & Day </h2>
+                <label>Select Day</label>
+                <select id="day">
+                  <option value = "0">Mon</option>
+                  <option value = "1">Tue</option>
+                  <option value = "2">Wed</option>
+                  <option value = "3">Thu</option>
+                  <option value = "4">Fri</option>
+                  <option value = "5">Sat</option>
+                  <option value = "6">Sun</option>
+                </select>
+                <br>
+
+              <input  type="submit" value="Get Fare">
+          </form>
+        </div>
+      </div>
+
+      <div class ="page" id="p2">
+        <div id="map"></div>
+      </div>
+
+      <div class ="page" id="p3">
+        <div class="graph-container">
+          <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+      </div>
 
   </div>
 
-  <div class="slide">
+    <form id="user-by-start">
+      <label for="name">Origin Name</label>
+      <input type="text" name="start_name" id="start_name"/>
 
-  <div class="graph-container">
-     <canvas id="myChart" width="400" height="400"></canvas>
-  </div>
+      <button type="submit">submit</button>
+    </form>
 
-  </div>
+    <form id="create-new" action="/api" method="POST">
+      <label for="start_lat">Pick Up Latitude</label>
+      <input type="number" name="start_lat" />
+      <label for="start_lng">Pick Up Longitude</label>
+      <input type="number" name="start_lng" />
+      <label for="start_addr">Pick Up Address</label>
+      <input type="text" name="start_addr" />
+      <label for="start_name">Pick Up Name</label>
+      <input type="text" name="start_name" />
 
-</div>
+      <label for="end_lat">Drop Off Latitude</label>
+      <input type="number" name="end_lat" />
+      <label for="end_lng">Drop Off Longitude</label>
+      <input type="number" name="end_lng" />
+      <label for="end_addr">Drop Off Address</label>
+      <input type="text" name="end_addr" />
+      <label for="end_name">Drop Off Name</label>
+      <input type="text" name="end_name" />
 
-<div class ="page" id="p3">
+      <label for="price">Price</label>
+      <input type="number" name="price" />
 
-  <form class="user">
-    <input type="text" name="name"            placeholder="E.G. CAROLINE">
-    <input type="text" name="location"        placeholder="E.G. HOME">
-    <input type="text" name="start-location"  placeholder="E.G. 127 ADAMS ST.">
+      <label for"start_time">Start Time</label>
+      <input type="time" name="start_time" />
 
-  </form>
-
-
-</div>
-
-</div>
-
-<form id="user-by-start">
-  <label for="name">Origin Name</label>
-  <input type="text" name="start_name" id="start_name"/>
-
-  <button type="submit">submit</button>
-</form>
-
-<form id="create-new" action="/api" method="POST">
-  <label for="start_lat">Pick Up Latitude</label>
-  <input type="number" name="start_lat" />
-  <label for="start_lng">Pick Up Longitude</label>
-  <input type="number" name="start_lng" />
-  <label for="start_addr">Pick Up Address</label>
-  <input type="text" name="start_addr" />
-  <label for="start_name">Pick Up Name</label>
-  <input type="text" name="start_name" />
-
-  <label for="end_lat">Drop Off Latitude</label>
-  <input type="number" name="end_lat" />
-  <label for="end_lng">Drop Off Longitude</label>
-  <input type="number" name="end_lng" />
-  <label for="end_addr">Drop Off Address</label>
-  <input type="text" name="end_addr" />
-  <label for="end_name">Drop Off Name</label>
-  <input type="text" name="end_name" />
-
-  <label for="price">Price</label>
-  <input type="number" name="price" />
-
-  <label for"start_time">Start Time</label>
-  <input type="time" name="start_time" />
-
-  <button type="submit">Save</button>
-</form>
+      <button type="submit">Save</button>
+    </form>
 </body>
 </html>

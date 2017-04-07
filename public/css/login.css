@@ -1,0 +1,26 @@
+header{
+  color: #000000 ;
+  font-family: 'Armata', sans-serif;
+  font-size: 53px;
+  text-align: center;
+  opacity: 1;
+  -webkit-animation-name: logo;
+  -webkit-animation-duration: 4s;
+}
+
+body{
+  align-items: center;
+  font-family: 'Armata', sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30vh;
+}
