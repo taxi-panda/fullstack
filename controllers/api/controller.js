@@ -29,6 +29,7 @@ controller.createDummy = (req,res) => {
 }
 
 controller.create = (req, res) => {
+    
     const obj = {};
 
     const keys =
@@ -42,8 +43,10 @@ controller.create = (req, res) => {
         }
     });
 
+    obj.user_id = req.user.id;
+
     routes.create(obj)
-        .then(data => res.json(data))
+        .then(data => res.redirect('/home'))
         .catch(err => console.log('Error: create:', err));
 }
 

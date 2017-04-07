@@ -95,5 +95,33 @@
 
   <button type="submit">submit</button>
 </form>
+
+<form id="create-new" action="/api" method="POST">
+  <label for="start_lat">Pick Up Latitude</label>
+  <input type="number" name="start_lat" />
+  <label for="start_lng">Pick Up Longitude</label>
+  <input type="number" name="start_lng" />
+  <label for="start_addr">Pick Up Address</label>
+  <input type="text" name="start_addr" />
+  <label for="start_name">Pick Up Name</label>
+  <input type="text" name="start_name" />
+
+  <label for="end_lat">Drop Off Latitude</label>
+  <input type="number" name="end_lat" />
+  <label for="end_lng">Drop Off Longitude</label>
+  <input type="number" name="end_lng" />
+  <label for="end_addr">Drop Off Address</label>
+  <input type="text" name="end_addr" />
+  <label for="end_name">Drop Off Name</label>
+  <input type="text" name="end_name" />
+
+  <label for="price">Price</label>
+  <input type="number" name="price" />
+
+  <label for"start_time">Start Time</label>
+  <input type="time" name="start_time" />
+
+  <button type="submit">Save</button>
+</form>
 </body>
 </html>
