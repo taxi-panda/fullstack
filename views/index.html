@@ -2,11 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Anton|Armata|Fira+Sans" rel="stylesheet">
+
+    <script src="/scripts/Chart.bundle.js"></script>
+    <script src="/scripts/jquery.js"></script>
+    <script src="/scripts/Chart.js"></script>
+    <script src="/scripts/index.js"></script>
+
+
+    <title>LOGISTICS</title>
+
 </head>
 <body>
-    
+
+
+  <button id="all">Get All Markers</button>
+
+
+ <div class "container">
+   <div class ="page" id="p1">
+
+             <div class ="search">
+               <form>
+                 <header> PANDA TAXI </header>
+                 <h2> Pick Up </h2>
+
+                 <input type="text" name="address" placeholder="E.G 123 Elm St">
+                 <input type="text" name="city"    placeholder="E.G New York">
+                 <input type="text" name="city"    placeholder="E.G 12590">
+                 <br>
+                 <h2> Drop Off</h2>
+                   <input  type="text"  name="address"     placeholder="E.G. 39 5TH AVE">
+                   <input  type="text"  name="city"        placeholder="E.G. NEW YORK">
+                   <input  type="text"  name="city"        placeholder="E.G. 12587"><br>
+
+                   <h2> Time & Day </h2>
+                 <fieldset>
+               <p>
+                 <label>Select Day</label>
+            <select id = "days">
+              <option value = "0">Mon</option>
+              <option value = "1">Tue</option>
+              <option value = "2">Wed</option>
+              <option value = "3">Thu</option>
+              <option value = "4">Fri</option>
+              <option value = "5">Sat</option>
+              <option value = "6">Sun</option>
+            </select>
+           </p>
+        </fieldset>
+
+                   <input  type="submit" value="Get Fare">
+               </form>
+             </div>
+    </div>
+<div class ="page" id="p2">
+  <div id="map">
+
+  </div>
+
+  <div class="slide">
+
+  <div class="graph-container">
+     <canvas id="myChart" width="400" height="400"></canvas>
+  </div>
+
+  </div>
+
+</div>
+
+<div class ="page" id="p3">
+
+  <form class="user">
+    <input type="text" name="name"            placeholder="E.G. CAROLINE">
+    <input type="text" name="location"        placeholder="E.G. HOME">
+    <input type="text" name="start-location"  placeholder="E.G. 127 ADAMS ST.">
+
+  </form>
+
+
+</div>
+
+</div>
+
+<form id="user-by-start">
+  <label for="name">Origin Name</label>
+  <input type="text" name="start_name" id="start_name"/>
+
+  <button type="submit">submit</button>
+</form>
 </body>
 </html>

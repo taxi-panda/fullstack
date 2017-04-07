@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/scripts/jquery.js"></script>
+    <script src="/scripts/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Armata|Fira+Sans" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="container-sign-up-page">
+        <div class="sign-up-container dashed-border">
+            <form class="sign-up-form" action="/users" method="POST">
+                <h1>New Account</h1>
+                <div class="search-ind">
+                    <label for="email">Email</label><br>
+                    <input id="email" type="text" name="user[email]" placeholder="email">
+                </div>
+                <div class="search-ind">
+                    <label for="password">Password</label><br>
+                    <input id="password" type="password" name="user[password]" placeholder="password">
+                </div>
+                <input class="submit" type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
