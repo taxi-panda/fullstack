@@ -7,38 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" type="text/css" href="/css/style.css">
       <link href="https://fonts.googleapis.com/css?family=Anton|Armata|Fira+Sans" rel="stylesheet">
-      
+
     <script src="/scripts/Chart.bundle.js"></script>
     <script src="/scripts/jquery.js"></script>
     <script src="/scripts/Chart.js"></script>
     <script src="/scripts/index.js"></script>
-    
-    <title>Document</title>
+
+    <title>LOGISTICS</title>
 </head>
 <body>
 
-  <form id="user-by-start">
+  <!-- <form id="user-by-start">
     <label for="name">Origin Name</label>
     <input type="text" name="start_name" id="start_name"/>
 
     <button type="submit">submit</button>
-  </form>
-
-  <canvas id="myChart" width="400" height="400"></canvas>
+  </form> -->
 
  <div class "container">
    <div class ="page" id="p1">
-         <div class ="logo">
-         </div>
+
              <div class ="search">
                <form>
-                 <h1> Pick Up </h1>
+                 <header> PANDA TAXI </header>
+                 <h2> Pick Up </h2>
 
                  <input type="text" name="address" placeholder="E.G 123 Elm St">
                  <input type="text" name="city"    placeholder="E.G New York">
                  <input type="text" name="city"    placeholder="E.G 12590">
                  <br>
-                 <h1> Drop Off</h1>
+                 <h2> Drop Off</h2>
                    <input  type="text"  name="address"     placeholder="E.G. 39 5TH AVE">
                    <input  type="text"  name="city"        placeholder="E.G. NEW YORK">
                    <input  type="text"  name="city"        placeholder="E.G. 12587"><br>
@@ -47,11 +45,21 @@
              </div>
     </div>
 <div class ="page" id="p2">
-  <div id="map"></div>
+  <div id="map">
+
+  </div>
+
+  <div class="slide">
+
+  <div class="graph-container">
+     <canvas id="myChart" width="400" height="400"></canvas>
+  </div>
+
+  </div>
 
   <script>
     function initMap() {
-      var myLatlng = {lat: -25.363, lng: 131.044};
+      var myLatlng = {lat:40.759796, lng: -73.978039};
 
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
@@ -73,7 +81,7 @@
       });
 
       marker.addListener('click', function() {
-        map.setZoom(8);
+        map.setZoom(6);
         map.setCenter(marker.getPosition());
       });
     }
