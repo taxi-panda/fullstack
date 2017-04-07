@@ -19,28 +19,24 @@
 </head>
 <body>
 
-
-  <!--<button id="all">Get All Markers</button>-->
-
-
   <div class "container">
 
       <div class ="page" id="p1">
         <div class ="search">
           <header> PANDA TAXI </header>
 
-          <form class="address">       
+          <form id="address">       
 
             <h2> Pick Up </h2>
             <input type="text" name="address" placeholder="E.G 123 Elm St" id="paddress">
             <input type="text" name="city"    placeholder="E.G New York" id="pcity">
-            <input  type="text"  name="state" placeholder="E.G. NY" id="pState">
+            <input  type="text"  name="state" placeholder="E.G. NY" id="pstate">
             <br>
 
             <h2> Drop Off</h2>
-            <input  type="text"  name="address"    placeholder="E.G. 39 5TH AVE" id="dAddress">
+            <input  type="text"  name="address"    placeholder="E.G. 39 5TH AVE" id="daddress">
             <input  type="text"  name="city" placeholder="E.G. NEW YORK" id="dCity">
-            <input  type="text"  name="state" placeholder="E.G. NY" id="dState">
+            <input  type="text"  name="state" placeholder="E.G. NY" id="dstate">
             <br>
 
             <h2> Time & Day </h2>
@@ -56,13 +52,27 @@
                 </select>
                 <br>
 
-              <input  type="submit" value="Get Fare">
+              <button type="submit" class="submit">Submit</button>
           </form>
         </div>
       </div>
 
       <div class ="page" id="p2">
         <div id="map"></div>
+        <script>
+          function initMap(){
+
+            let myLatlng = {lat: 40.764178, lng: -73.959834};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: myLatlng
+              });
+          }
+        </script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjz5F9aOz4-Qq-ENbLv2-xFwGD-nZL80o&callback=initMap">
+        </script>
       </div>
 
       <div class ="page" id="p3">
@@ -70,7 +80,7 @@
           <canvas id="myChart" width="400" height="400"></canvas>
         </div>
       </div>
-
+ 
   </div>
 
     <form id="user-by-start">

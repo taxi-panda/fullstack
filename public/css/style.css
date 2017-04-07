@@ -60,8 +60,8 @@ form {
 }
 
 #map{
-  width:  300px;
-  height: 300px;
+  width:  90%;
+  height: 90%;
 }
 
 input{
@@ -77,14 +77,11 @@ input{
   background-color: #f0f8ff ;
 }
 
-
-.slide{
-    background-color: #f0f8ff ;
-    border: solid black;
-    height: 200px;
-    width:  200px;
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-
 
 @-webkit-keyframes logo{
   0%  { color: #000000 ; opacity: 0.1; font-size: 40px;}
